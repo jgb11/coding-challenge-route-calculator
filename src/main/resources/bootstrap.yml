@@ -1,0 +1,3 @@
+spring.application.name: coding-challenge-route-calculator
+
+spring.cloud.config.uri: http://spring-cloud-config:8888

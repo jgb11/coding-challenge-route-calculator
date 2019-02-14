@@ -4,25 +4,19 @@ import org.jgb.routecalculator.model.CityInfo;
 import org.jgb.routecalculator.model.RouteInfo;
 import org.jgb.routecalculator.service.CityDataRestTemplateService;
 import org.jgb.routecalculator.service.RouteCalculatorService;
-import org.jgb.routecalculator.service.strategy.ConnectionRouteStrategy;
-import org.jgb.routecalculator.service.strategy.RouteStrategy;
-import org.jgb.routecalculator.service.strategy.TimeRouteStrategy;
+import org.jgb.routecalculator.service.strategy.impl.ConnectionRouteStrategy;
+import org.jgb.routecalculator.service.strategy.impl.TimeRouteStrategy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.time.LocalTime;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
-import static org.jgb.routecalculator.service.strategy.ConnectionRouteStrategy.CONNECTION_ROUTE_STRATEGY;
-import static org.jgb.routecalculator.service.strategy.TimeRouteStrategy.TIME_ROUTE_STRATEGY;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 

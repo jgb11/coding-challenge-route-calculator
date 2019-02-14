@@ -2,7 +2,7 @@ package org.jgb.routecalculator.service.strategy;
 
 import org.jgb.routecalculator.model.CityInfo;
 import org.jgb.routecalculator.model.RouteInfo;
-import org.junit.Before;
+import org.jgb.routecalculator.service.strategy.impl.TimeRouteStrategy;
 import org.junit.Test;
 
 import java.time.LocalTime;

@@ -17,8 +17,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.jgb.routecalculator.service.strategy.ConnectionRouteStrategy.CONNECTION_ROUTE_STRATEGY;
-import static org.jgb.routecalculator.service.strategy.TimeRouteStrategy.TIME_ROUTE_STRATEGY;
+import static org.jgb.routecalculator.service.strategy.impl.ConnectionRouteStrategy.CONNECTION_ROUTE_STRATEGY;
+import static org.jgb.routecalculator.service.strategy.impl.TimeRouteStrategy.TIME_ROUTE_STRATEGY;
 
 /**
  * @author jgb

@@ -1,10 +1,11 @@
-package org.jgb.routecalculator.service.strategy;
+package org.jgb.routecalculator.service.strategy.impl;
 
 import org.jgb.routecalculator.model.RouteInfo;
+import org.jgb.routecalculator.service.strategy.RouteStrategy;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import static org.jgb.routecalculator.service.strategy.TimeRouteStrategy.TIME_ROUTE_STRATEGY;
+import static org.jgb.routecalculator.service.strategy.impl.TimeRouteStrategy.TIME_ROUTE_STRATEGY;
 
 @Qualifier(TIME_ROUTE_STRATEGY)
 @Component

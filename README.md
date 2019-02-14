@@ -8,7 +8,44 @@ This is a Spring Boot REST application.
 The main purpose is to serve city routes given an origin city, the endpoint return a list with possible routes depending on less time or less connections.
 Example of data model:
 ```json
-
+  {
+    "cityOrigin": "Zaragoza",
+    "cityDestiny": "Madrid",
+    "connections": [
+      {
+        "id": "5c65921e2ab79c000173a686",
+        "city": "Zaragoza",
+        "cityDestiny": "Madrid",
+        "departureTime": "10:00:00",
+        "arrivalTime": "11:20:00"
+      }
+    ],
+    "totalConnections": 1,
+    "totalTime": 80
+  },
+  {
+    "cityOrigin": "Zaragoza",
+    "cityDestiny": "Barcelona",
+    "connections": [
+      {
+        "id": "5c65921e2ab79c000173a686",
+        "city": "Zaragoza",
+        "cityDestiny": "Madrid",
+        "departureTime": "10:00:00",
+        "arrivalTime": "11:20:00"
+      },
+      {
+        "id": "5c65921e2ab79c000173a687",
+        "city": "Madrid",
+        "cityDestiny": "Barcelona",
+        "departureTime": "13:20:00",
+        "arrivalTime": "19:40:00"
+      }
+    ],
+    "totalConnections": 2,
+    "totalTime": 580
+  }
+]
 ```
 
 ## build/ run
@@ -36,7 +73,7 @@ $ mvn -f ./pom.xml clean package
 2. JAR run:
 ```bash
 $ java "-Dserver.port=8070" "-Dspring.cloud.config.uri=http://localhost:8888" "-Djava.security.egd=file:/dev/./urandom" \
-    -jar target/coding-challenge-city-data-0.0.1-SNAPSHOT.jar
+    -jar target/coding-challenge-route-calculator-0.0.1-SNAPSHOT.jar
 ```
 
 ## swagger

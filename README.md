@@ -137,7 +137,7 @@ Feature branches just build the project and execute tests to check the branch is
 
 **Master branch strategy**
 
-Master branch execute .the whole CI/CD pipeline to prepare the project to deploy to the environment.
+Master branch execute the whole CI/CD pipeline to prepare the project to deploy to the environment.
 
 ![Feature branch strategy](doc/pipeline_master_branch.png)
 

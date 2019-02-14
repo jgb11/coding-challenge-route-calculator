@@ -1,7 +1,5 @@
 package org.jgb.routecalculator.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
@@ -31,7 +29,7 @@ public class RouteInfo {
 
     public RouteInfo(RouteInfo route, CityInfo connection) {
         this.cityOrigin = route.getCityOrigin();
-        this.cityDestiny = route.getCityDestiny();
+        this.cityDestiny = connection.getCityDestiny();
         this.connections = new ArrayList<>(route.getConnections());
         this.connections.add(connection);
     }

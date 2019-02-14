@@ -38,23 +38,25 @@ public class RouteCalculatorServiceImpl implements RouteCalculatorService {
 
             final List<CityInfo> newConnectionCityInfoList = cityDataRestTemplateService.getCityList(lastConnectionCityInfo.getCityDestiny());
             newConnectionCityInfoList.forEach(connection -> {
-                final Optional<RouteInfo> existingDestinyRouteInfo = candidateRoutesList.stream()
-                        .filter(ri -> ri.getCityDestiny().equals(connection.getCityDestiny()))
-                        .findFirst();
+                if (!cityOrigin.equals(connection.getCityDestiny())) {
+                    final Optional<RouteInfo> existingDestinyRouteInfo = candidateRoutesList.stream()
+                            .filter(ri -> ri.getCityDestiny().equals(connection.getCityDestiny()))
+                            .findFirst();
 
-                if (existingDestinyRouteInfo.isPresent()) {
-                    final RouteInfo compareRouteInfo = new RouteInfo(candidateRoute.getCityOrigin(), connection.getCityDestiny());
-                    compareRouteInfo.setConnections(candidateRoute.getConnections());
-                    compareRouteInfo.addConnection(connection);
+                    if (existingDestinyRouteInfo.isPresent()) {
+                        final RouteInfo compareRouteInfo = new RouteInfo(candidateRoute.getCityOrigin(), connection.getCityDestiny());
+                        compareRouteInfo.setConnections(candidateRoute.getConnections());
+                        compareRouteInfo.addConnection(connection);
 
-                    finalRoutesList.remove(existingDestinyRouteInfo.get());
-                    final RouteInfo bestRouteInfo = strategy.compareRoutes(existingDestinyRouteInfo.get(), compareRouteInfo);
-                    finalRoutesList.add(bestRouteInfo);
-                } else {
-                    final RouteInfo newRouteInfo = new RouteInfo(candidateRoute.getCityOrigin(), connection.getCityDestiny());
-                    newRouteInfo.setConnections(candidateRoute.getConnections());
-                    newRouteInfo.addConnection(connection);
-                    finalRoutesList.add(newRouteInfo);
+                        finalRoutesList.remove(existingDestinyRouteInfo.get());
+                        final RouteInfo bestRouteInfo = strategy.compareRoutes(existingDestinyRouteInfo.get(), compareRouteInfo);
+                        finalRoutesList.add(bestRouteInfo);
+                    } else {
+                        final RouteInfo newRouteInfo = new RouteInfo(candidateRoute.getCityOrigin(), connection.getCityDestiny());
+                        newRouteInfo.setConnections(candidateRoute.getConnections());
+                        newRouteInfo.addConnection(connection);
+                        finalRoutesList.add(newRouteInfo);
+                    }
                 }
             });
         }

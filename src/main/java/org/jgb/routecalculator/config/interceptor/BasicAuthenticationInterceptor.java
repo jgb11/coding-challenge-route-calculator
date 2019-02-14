@@ -1,4 +1,4 @@
-package org.jgb.routecalculator.config;
+package org.jgb.routecalculator.config.interceptor;
 
 import org.apache.commons.codec.binary.Base64;
 import org.springframework.http.HttpHeaders;

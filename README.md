@@ -53,7 +53,7 @@ Example of data model:
 **Prerequisites**
 - Maven installed
 - Docker installed
-- [Spring Cloud Config running on docker](##spring-cloud-config-on-docker-(how-to))
+- [Spring Cloud Config running on docker](#spring-cloud-config-on-docker-how-to)
 - Create docker network
 ```bash
 $ docker network create codingchallenge

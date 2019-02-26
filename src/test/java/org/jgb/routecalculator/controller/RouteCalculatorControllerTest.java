@@ -1,11 +1,9 @@
 package org.jgb.routecalculator.controller;
 
-import org.jgb.routecalculator.RouteCalculatorApplication;
-import org.jgb.routecalculator.config.TestSecurityConfiguration;
 import org.jgb.routecalculator.model.RouteInfo;
 import org.jgb.routecalculator.service.RouteCalculatorService;
-import org.jgb.routecalculator.service.strategy.impl.ConnectionRouteStrategy;
 import org.jgb.routecalculator.service.strategy.RouteStrategy;
+import org.jgb.routecalculator.service.strategy.impl.ConnectionRouteStrategy;
 import org.jgb.routecalculator.service.strategy.impl.TimeRouteStrategy;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,9 +31,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @since 14/02/19 10:49
  */
 @RunWith(SpringRunner.class)
-@WebMvcTest(RouteCalculatorController.class)
+@WebMvcTest(controllers = RouteCalculatorController.class, secure = false)
 @TestPropertySource(locations = "classpath:bootstrap-tests.yml")
-@ContextConfiguration(classes = {RouteCalculatorApplication.class, TestSecurityConfiguration.class, RefreshAutoConfiguration.class})
+@ContextConfiguration(classes = {RouteCalculatorController.class, RefreshAutoConfiguration.class})
 public class RouteCalculatorControllerTest {
 
     @Autowired
